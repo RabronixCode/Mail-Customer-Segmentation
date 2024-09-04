@@ -1,0 +1,75 @@
+The dataset contains the following columns:
+
+CustomerID: A unique identifier for each customer.
+Gender: The gender of the customer (Male/Female).
+Age: The age of the customer.
+Annual Income (k$): The annual income of the customer in thousands of dollars.
+Spending Score (1-100): A score assigned by the mall, likely based on customer behavior and spending patterns.
+
+****
+
+Dataset Summary:
+Number of Rows: 200
+Number of Columns: 5
+Column Types:
+4 columns are numerical (int64): CustomerID, Age, Annual Income (k$), Spending Score (1-100)
+1 column is categorical (object): Gender
+Missing Values:
+There are no missing values in any of the columns, which means the data is complete and ready for analysis.
+Basic Statistics:
+Age:
+Range: 18 to 70 years
+Mean: ~38.85 years
+Standard Deviation: ~13.97 years
+Annual Income (k$):
+Range: $15k to $137k
+Mean: ~$60.56k
+Standard Deviation: ~$26.26k
+Spending Score (1-100):
+Range: 1 to 99
+Mean: ~50.2
+Standard Deviation: ~25.82
+
+
+****
+
+The histograms above provide a visual summary of the distributions for Age, Annual Income (k$), and Spending Score (1-100):
+
+Age Distribution:
+
+The age distribution appears to be somewhat bimodal, with peaks around the late 20s and late 40s. This suggests the presence of two primary age groups among the customers.
+Annual Income Distribution:
+
+The annual income distribution is fairly uniform with a slight concentration around the $50k-$75k range. The income spread suggests a diverse customer base in terms of purchasing power.
+Spending Score Distribution:
+
+The spending score distribution is fairly uniform as well, with a slight dip in the middle ranges. This suggests that customers either tend to spend very little or a lot, with fewer customers in the mid-spending range.
+
+****
+
+The boxplots above provide a clear view of the distribution and potential outliers in each feature:
+
+Age:
+
+The boxplot shows a few mild outliers on the higher end (ages around 65-70). However, the overall distribution appears fairly consistent, with the interquartile range (IQR) covering ages 28 to 49.
+Annual Income (k$):
+
+The annual income boxplot does not show any significant outliers. The distribution is fairly symmetrical, with the median slightly below $60k. The IQR spans from about $42k to $78k.
+Spending Score (1-100):
+
+The spending score distribution appears uniform, with no significant outliers. The median spending score is around 50, with an IQR from about 35 to 73.
+Insights from the Visualizations:
+No Major Outliers: There are no significant outliers that would require removal or special handling, meaning we can proceed with the dataset as is.
+Diverse Customer Base: The diversity in age, income, and spending patterns suggests that clustering could reveal interesting customer segments.
+
+
+****
+
+The scaled features are now centered around a mean of 0 with a standard deviation of 1. This ensures that all features contribute equally to the distance calculations used by the K-means algorithm.
+
+****
+
+The "elbow" typically represents the point where adding more clusters does not significantly improve the model's fit, indicating an optimal balance between model complexity and fit.
+From the graph, it looks like the elbow occurs around 6 clusters. However, to make a more informed decision, we should also perform Silhouette Analysis.
+The silhouette score peaks around 6 clusters, suggesting that these numbers might provide the most well-separated and meaningful clusters.
+Since both the Elbow Method and Silhouette Analysis indicate that 6 clusters could be optimal, we can proceed with applying K-means clustering using 6 clusters.
